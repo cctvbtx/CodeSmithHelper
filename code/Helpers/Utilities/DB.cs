@@ -30,7 +30,14 @@ namespace Dev.CSmith.Utilities
         /// <returns>string</returns>
         public static string GetPropertyNameFromColumn(ColumnSchema column, string prefix, string strip)
         {
-            return prefix + column.Name.Replace(strip, "").ToCSharpIdentifier().ToPascalCase();
+            if (strip != string.Empty)
+            {
+                return prefix + column.Name.Replace(strip, "").ToCSharpIdentifier().ToPascalCase();
+            }
+            else
+            {
+                return prefix + column.Name.ToCSharpIdentifier().ToPascalCase();
+            }
         }
 
         /// <summary>
@@ -40,7 +47,7 @@ namespace Dev.CSmith.Utilities
         /// <returns>string /returns>
         public static string GetClassNameFromTable(TableSchema table)
         {
-            return GetClassNameFromTable(table, "", "");
+            return GetClassNameFromTable(table, "", "", "");
         }
 
         /// <summary>
@@ -50,9 +57,16 @@ namespace Dev.CSmith.Utilities
         /// <param name="prefix"></param>
         /// <param name="strip"></param>
         /// <returns>string</returns>
-        public static string GetClassNameFromTable(TableSchema table, string prefix, string strip)
+        public static string GetClassNameFromTable(TableSchema table, string prefix, string postfix, string strip)
         {
-            return prefix + table.Name.Replace(strip, "").ToCSharpIdentifier().ToPascalCase();
+            if (strip != string.Empty)
+            {
+                return prefix + table.Name.Replace(strip, "").ToCSharpIdentifier().ToPascalCase() + postfix;
+            }
+            else
+            {
+                return prefix + table.Name.ToCSharpIdentifier().ToPascalCase() + postfix;
+            }
         }
 
         /// <summary>
@@ -103,44 +117,6 @@ namespace Dev.CSmith.Utilities
             return parameters;
         }
 
-        public string DnnSqlModel(SchemaExplorer.TableSchema SourceTable)
-        {
-            return "IDnn" + SourceTable.Name.Replace("NetTv_", "") + "Sql";
-        }
-        public string DnnDataModel(SchemaExplorer.TableSchema SourceTable)
-        {
-            return "IDnn" + SourceTable.Name.Replace("NetTv_", "").ToCSharpIdentifier().ToPascalCase();
-        }
-        public string DnnTableModel(SchemaExplorer.TableSchema SourceTable)
-        {
-            return "IDnn" + SourceTable.Name.Replace("NetTv_", "").ToCSharpIdentifier().ToPascalCase() + "Table";
-        }
-        public string ITableModel(SchemaExplorer.TableSchema SourceTable)
-        {
-            return "I" + SourceTable.Name.Replace("NetTv_", "").ToCSharpIdentifier().ToPascalCase() + "Table";
-        }
-        public string DataModel(SchemaExplorer.TableSchema SourceTable)
-        {
-            return "I" + SourceTable.Name.Replace("NetTv_", "").ToCSharpIdentifier().ToPascalCase();
-        }
-        public string IDnnDal(SchemaExplorer.TableSchema SourceTable)
-        {
-            return "I" + SourceTable.Name.Replace("NetTv_", "");
-        }
-        public string ISql(SchemaExplorer.TableSchema SourceTable)
-        {
-            return "I" + SourceTable.Name.Replace("NetTv_", "") + "Sql";
-        }
-
-        public string IRepository(SchemaExplorer.TableSchema SourceTable)
-        {
-            return "I" + SourceTable.Name.Replace("NetTv_", "") + "Repository";
-        }
-
-        public string IDal(SchemaExplorer.TableSchema SourceTable)
-        {
-            return "I" + SourceTable.Name.Replace("NetTv_", "") + "Dal";
-        }
 
         public string CreateColumnList(TableSchema table)
         {

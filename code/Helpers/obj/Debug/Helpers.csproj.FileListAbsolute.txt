@@ -3,3 +3,8 @@ E:\SMSoft\Projects\NetTv\code\CodeSmith\Helpers\bin\Debug\Dev.CodeSmith.Helpers.
 E:\SMSoft\Projects\NetTv\code\CodeSmith\Helpers\bin\Debug\Dev.CodeSmith.Helpers.pdb
 E:\SMSoft\Projects\NetTv\code\CodeSmith\Helpers\obj\Debug\Dev.CodeSmith.Helpers.dll
 E:\SMSoft\Projects\NetTv\code\CodeSmith\Helpers\obj\Debug\Dev.CodeSmith.Helpers.pdb
+E:\SMSoft\Projects\CodeSmith\code\Helpers\bin\Debug\Dev.CodeSmith.Helpers.dll
+E:\SMSoft\Projects\CodeSmith\code\Helpers\bin\Debug\Dev.CodeSmith.Helpers.pdb
+E:\SMSoft\Projects\CodeSmith\code\Helpers\obj\Debug\Dev.CodeSmith.Helpers.dll
+E:\SMSoft\Projects\CodeSmith\code\Helpers\obj\Debug\Dev.CodeSmith.Helpers.pdb
+E:\SMSoft\Projects\CodeSmith\code\Helpers\obj\Debug\Helpers.csprojResolveAssemblyReference.cache
